@@ -741,7 +741,7 @@ class MUSIQ(nn.Module):
         # The previous approximation sin(φ_center) = sin(45°) ≈ 0.707 sampled only
         # the face centre latitude, over-weighting polar faces by ~28%.
         # Order matches project_view: 0:+X, 1:-X, 2:+Y, 3:-Y, 4:+Z, 5:-Z
-        from constants import _RAW_ERP_WEIGHTS as raw_lat_weights
+        from spheriq.constants import _RAW_ERP_WEIGHTS as raw_lat_weights
         self.register_buffer(
             'erp_face_weights',
             raw_lat_weights / raw_lat_weights.sum(),   # normalise to sum = 1
